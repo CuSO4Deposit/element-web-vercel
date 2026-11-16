@@ -19,4 +19,9 @@ mv ".extract/element-v${version}" public
 rm -rf .extract
 
 cp config.json public/config.json
+
+for css in public/bundles/*/bundle.css; do
+    cat username-colors.css >> "$css"
+done
+
 find public -name '*.map' -delete
